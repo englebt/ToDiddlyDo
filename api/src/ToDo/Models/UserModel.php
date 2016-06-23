@@ -42,7 +42,7 @@ class UserModel {
 		$stmt = $this->core->dbh->prepare($sql);
 
 		if ($stmt->execute()) {
-			$r = $stmt->fetch();
+			$r = $stmt->fetch(PDO::FETCH_ASSOC);
 		} else {
 			$r = 0;
 		}

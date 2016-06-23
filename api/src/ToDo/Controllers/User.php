@@ -52,4 +52,13 @@ class User {
 		echo json_encode($this->UserModel->allUsers());
 	}
 
+	/*
+	 * Fetch a single user
+	 */
+	public function SingleUser($id) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->UserModel->singleUser($id));
+	}
+
 }
