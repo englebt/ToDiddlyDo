@@ -44,7 +44,7 @@ class InitMigration extends AbstractMigration
 			->addColumn('display_name', 'string')
 			->addColumn('email',		'string')
 			->addColumn('password', 	'string')
-			->addColumn('user_roles',	'integer')
+			->addColumn('user_role',	'integer', array('default' => '1')) //1 = member, 1 = admin
 			->addColumn('registered', 	'timestamp', array('default' => 'CURRENT_TIMESTAMP'))
 			->create();
 

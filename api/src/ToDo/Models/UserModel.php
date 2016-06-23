@@ -17,11 +17,11 @@ class UserModel {
 	}
 
 	/*
-	 * Get all Users
+	 * Get all User's data
 	 */
 	public function allUsers () {
 
-		$sql = "SELECT * FROM users";
+		$sql = "SELECT username, display_name, email, user_role, registered FROM users";
 		$stmt = $this->core->dbh->prepare($sql);
 
 		if ($stmt->execute()) {
@@ -38,7 +38,7 @@ class UserModel {
 	 */
 	public function singleUser ($id) {
 
-		$sql = "SELECT * FROM users WHERE id = $id";
+		$sql = "SELECT username, display_name, email, user_role, registered FROM users WHERE id = $id";
 		$stmt = $this->core->dbh->prepare($sql);
 
 		if ($stmt->execute()) {
