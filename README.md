@@ -86,3 +86,5 @@ this is the commit message, keep it related to what you work on. It can really b
 This then pushes the code to the branch you're associated with on the repo. Obviously, replace BRANCHNAME with the name of the repo you're working under. In my case, I would do the following:
 
     git push origin aalicki
+=======
+# project-1
