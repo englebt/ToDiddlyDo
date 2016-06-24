@@ -51,5 +51,11 @@ class Task {
 		echo json_encode($this->TaskModel->EditTask());
 
 	}
+	public function saveTask() {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->Taskmodel->SaveTask());
+
+	}
 
 }
