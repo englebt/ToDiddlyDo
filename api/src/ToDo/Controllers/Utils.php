@@ -9,7 +9,6 @@ class Utils {
 	public function __construct() {
 		global $app;
 		$this->app = $app;
-
 	}
 
 	/*

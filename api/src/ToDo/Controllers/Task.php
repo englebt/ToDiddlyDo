@@ -23,10 +23,11 @@ class Task {
 	}
 
 	/*
-	 * Primary route for the User API
+	 * Primary route for the Task API
+	 * No direct access.
 	 */
 	public function Index () {
-
+		echo 'No direct access.';
 	}
 
 	/*

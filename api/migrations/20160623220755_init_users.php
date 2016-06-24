@@ -28,7 +28,7 @@ class InitUsers extends AbstractMigration
     public function change()
     {
 
-		// 1st Player is game owner, full Admin Rights
+		// Default users for the project doers.
 		$user = [
 			[
 				'username' 		=> 'aalicki',
@@ -78,7 +78,7 @@ class InitUsers extends AbstractMigration
 				'email'			=> 'supmem@todolist.com',
 				'password'		=> 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', //123
 				'user_role'		=> '2'
-			],
+			]
 		];
 
 		// this is a handy shortcut
