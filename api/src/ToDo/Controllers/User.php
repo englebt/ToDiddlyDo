@@ -25,19 +25,40 @@ class User {
 	 */
 	public function Index () {
 
-		echo 'User API route';
 	}
 
 	/*
 	 * Process login form
 	 */
 	public function Login() {
+		header("Content-Type: application/json");
+		echo json_encode($this->UserModel->login());
 	}
 
 	/*
 	 * Process signup form
 	 */
 	public function Register() {
+		header("Content-Type: application/json");
+		echo json_encode($this->UserModel->register());
+	}
+
+	/*
+	 * Fetch all of the users
+	 */
+	public function AllUsers() {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->UserModel->allUsers());
+	}
+
+	/*
+	 * Fetch a single user
+	 */
+	public function SingleUser($id) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->UserModel->singleUser($id));
 	}
 
 }

@@ -17,7 +17,7 @@ class Main {
 	 */
 	public function Index (){
 
-		echo 'the API routes and documentation';
+		require_once '../api/www/index.php';
 	}
 
 }
