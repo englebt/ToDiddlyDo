@@ -4,3 +4,4 @@
 /node_modules
 /api/vendor
 /.idea
+/api/composer.phar

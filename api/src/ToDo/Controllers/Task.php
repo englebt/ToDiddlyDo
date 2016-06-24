@@ -38,5 +38,24 @@ class Task {
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->userTasks($uid));
 	}
+	//jsw324 attempt
+	public function DeleteTask($taskID) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->DeleteTask($taskID));
+	}
+	//jsw324 attempt
+	public function EditTask() {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->EditTask());
+
+	}
+	public function saveTask() {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->Taskmodel->SaveTask());
+
+	}
 
 }
