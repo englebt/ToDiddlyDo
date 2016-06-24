@@ -22,9 +22,10 @@ class User {
 
 	/*
 	 * Primary route for the User API
+	 * No direct access.
 	 */
 	public function Index () {
-
+		echo 'No direct access.';
 	}
 
 	/*

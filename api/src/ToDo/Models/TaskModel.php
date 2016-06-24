@@ -22,6 +22,9 @@ class TaskModel {
 
 	/*
 	 * Get all tasks for single user
+	 *
+	 * This query will return all the tasks under the "tasks" table
+	 * where the user_id = whatever is passed as $uid
 	 */
 	public function userTasks ($uid) {
 
@@ -29,7 +32,7 @@ class TaskModel {
 		$stmt = $this->core->dbh->prepare($sql);
 
 		if ($stmt->execute()) {
-			$r = $stmt->fetch(PDO::FETCH_ASSOC);
+			$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		} else {
 			$r = 0;
 		}
