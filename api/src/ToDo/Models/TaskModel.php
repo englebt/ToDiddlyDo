@@ -39,6 +39,21 @@ class TaskModel {
 
 		return $r;
 	}
+
+  //mith
+  public function task ($uid) {
+    $sql = "SELECT* FROM tasks WHERE user id = $uid AND task id = $taskId";
+    $stmt = $this->core->dbh->prepare($sql);
+
+    if ($stmt->execute()) {
+      $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {   
+      $r = 0;
+    }
+
+    return $r;
+  }
+
 	/*jsw324 attempt at deleting tasks */ 
 	public function deleteTask ($taskID) {
 

@@ -38,7 +38,7 @@ $app->get('/users/all', function () use ($app, $User) {
 	$User->AllUsers();
 });
 
-//Get a single user
+//Get a single user //mith
 $app->get('/user/:id', function ($id) use ($app, $User) {
 	$User->SingleUser($id);
 });
@@ -64,6 +64,9 @@ $app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
 });
 
 //Get a single task
+$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
+  $Task->Task($uid);
+});
 
 //Create a task
 

@@ -38,6 +38,13 @@ class Task {
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->userTasks($uid));
 	}
+
+  //mith attempt
+  public function Task($uid) {
+    header("Content-Type: application/json");
+    echo json_encode($this->TaskModel->task($uid));
+  }
+
 	//jsw324 attempt
 	public function DeleteTask($taskID) {
 
