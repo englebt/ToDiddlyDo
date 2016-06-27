@@ -55,7 +55,7 @@ class TaskModel {
   }
 
 	/*jsw324 attempt at deleting tasks */ 
-	public function deleteTask ($taskID) {
+	public function DeleteTask ($taskID) {
 
 		//get task ID
 
@@ -86,7 +86,7 @@ class TaskModel {
 	}
 
 	// jsw324 attempt at getting single task from userID - will use this to edit
-	public function editTask() {
+	public function EditTask() {
 		//get task ID
 		//get fields with potential of being edited.
 		$taskID = $this->app->request->post('taskID')
@@ -129,7 +129,7 @@ class TaskModel {
 		return $returnData;
 	}
 
-	public function saveTask() {
+	public function SaveTask() {
 
 		// get task ID and fields to udpate
 		$taskID = $this->app->request->post('taskID')
@@ -172,5 +172,32 @@ class TaskModel {
 		}
 	}
 
+  // mith
+  public function CompleteTask() {
+    // get TaskId and fields to update
+    $taskID = $this->app->request->post('taskID')
+    $taskIsComplete = $this->app->request->post('is_complete')
 
+    $sql = "INSERT INTO tasks (is_complete) VALUES (:is_complete)";
+    $stmt = $this->core->dbh->prepare($sql);
+
+    if ($stmt->execute(
+      array(
+        ':is_complete' => $taskIsComplete
+      )
+    )) {
+      $returnData = array(
+        'status' => 'success'
+        'msg' => 'Task Completed!'
+
+        ); 
+    } else {
+      $returnData = array(
+        'status' => 'error'
+        'msg' => 'Error: Failed to update task.'
+      );
+    }
+
+    return $returnData;
+  }
 }

@@ -68,9 +68,18 @@ $app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
   $Task->Task($uid);
 });
 
-//Create a task
+//Create a task //mith
+$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
+  $Task->CreateTask($uid);
+}
 
-//Delete a task
+//Delete a task //mith
+$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
+  $Task->DeleteTask($uid);
+}
 
-//Mark a task as completed
+//Mark a task as completed //mith
+$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
+  $Task->CompleteTask($uid);
+}
 
