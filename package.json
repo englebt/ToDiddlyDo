@@ -1,0 +1,27 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "description": "Resume builder for Andrew Lee for his company Career Unlocked",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Carlos Medina",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "connect-history-api-fallback": "^1.2.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.13",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "connect-history-api-fallback": "^1.2.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1"
+  }
+}
