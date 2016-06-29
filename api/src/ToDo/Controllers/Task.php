@@ -38,24 +38,43 @@ class Task {
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->userTasks($uid));
 	}
+
+	/*
+	 * Fetch a single task
+	 */
+	public function SingleTask($id) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->singleTask($id));
+	}
+
 	//jsw324 attempt
 	public function DeleteTask($taskID) {
 
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->DeleteTask($taskID));
 	}
+
 	//jsw324 attempt
 	public function EditTask() {
 
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->EditTask());
-
 	}
-	public function saveTask() {
+
+	public function SaveTask() {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->Taskmodel->SaveTask());
+		echo json_encode($this->TaskModel->SaveTask());
+	}
 
+	/*
+	 * Mark a task as complete or incomplete depending on the route used
+	 */
+	public function MarkTask($taskID, $status) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->markTask($taskID, $status));
 	}
 
 }

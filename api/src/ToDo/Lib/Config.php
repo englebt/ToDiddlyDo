@@ -17,6 +17,7 @@ class Config {
 //Set our environment
 //local, dev, prod
 $platform = 'local';
+Config::write('environment', $platform);
 
 if ($platform === 'prod' || $platform === 'dev'){
 
