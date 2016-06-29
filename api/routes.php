@@ -69,6 +69,7 @@ $app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
 	$Task->UserTasks($uid);
 });
 
+
 //Get a single task
 $app->get('/task/single/:id', function ($id) use ($app, $Task) {
 	$Task->SingleTask($id);
@@ -93,4 +94,5 @@ $app->get('/task/delete/:id', function ($id) use ($app, $Task) {
 $app->get('/task/mark/:id/:status', function ($id, $status) use ($app, $Task) {
 	$Task->MarkTask($id, $status);
 });
+
 

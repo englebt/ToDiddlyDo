@@ -52,20 +52,20 @@ class Task {
 	public function DeleteTask($taskID) {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->TaskModel->DeleteTask($taskID));
+		echo json_encode($this->TaskModel->deleteTask($taskID));
 	}
 
 	//jsw324 attempt
 	public function EditTask() {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->TaskModel->EditTask());
+		echo json_encode($this->TaskModel->editTask());
 	}
 
 	public function SaveTask() {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->TaskModel->SaveTask());
+		echo json_encode($this->TaskModel->saveTask());
 	}
 
 	/*
@@ -76,5 +76,4 @@ class Task {
 		header("Content-Type: application/json");
 		echo json_encode($this->TaskModel->markTask($taskID, $status));
 	}
-
 }

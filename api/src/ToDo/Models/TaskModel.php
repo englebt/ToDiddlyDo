@@ -57,6 +57,7 @@ class TaskModel {
 		return $r;
 	}
 
+
 	/*jsw324 attempt at deleting tasks */ 
 	public function deleteTask ($taskID) {
 
@@ -89,6 +90,8 @@ class TaskModel {
 
 	// jsw324 attempt at getting single task from userID - will use this to edit
 	public function editTask() {
+
+		//get task ID
 
 		//get fields with potential of being edited.
 		$taskID 			= $this->app->request->post('taskid');
