@@ -1,16 +1,3 @@
- <style>
-  a {
-    text-decoration: none;
-    border-bottom: 1px solid #a4e0d2;
-  }
-  ul {
-    color: #a4e0d2;
-  }
-  .link {
-    color: #2a679e;
-  }
- </style>
-
 #Table of Contents
   * [Vagrant / VirtualBox Installation](#install)
   * [Project Setup](#setup)
