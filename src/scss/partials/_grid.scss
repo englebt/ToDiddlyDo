@@ -1,0 +1,16 @@
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column {
+	flex-basis: 2;
+}
+
+.one {
+	flex: 1;
+}
+
+.ten {
+	flex: 10;
+}

@@ -7,20 +7,17 @@ var gulp = require('gulp');
 var bs = require('browser-sync').create(),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
-    nodemon = require('gulp-nodemon'),
-    autoprefixer = require('gulp-autoprefixer'),
-    historyApiFallback = require('connect-history-api-fallback');
+    autoprefixer = require('gulp-autoprefixer');
 
 
 var BROWSER_SYNC_RELOAD_DELAY = 500;
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'nodemon'], function() {
+gulp.task('serve', ['sass'], function() {
 
     bs.init({
-        server: "./public",
+        server: "./views",
         baseDir: "app",
-        middleware: [historyApiFallback()],
         port: 8080,
         online: true,
         open: "local",
@@ -30,7 +27,7 @@ gulp.task('serve', ['sass', 'nodemon'], function() {
 
     gulp.watch("./src/scss/**/*.scss", ['sass']);
     gulp.watch("./src/js/**/*.js", ['js']).on('change', bs.reload);
-    gulp.watch(["./public/*.html", "./public/partials/*.html"]).on('change', bs.reload);
+    gulp.watch(["./views/*.html", "./views/partials/*.html"]).on('change', bs.reload);
 });
 
 gulp.task('nodemon', function(cb) {
@@ -64,25 +61,25 @@ gulp.task('plumber', ['sass'], function() {
         .pipe(sass())
         // .pipe(uglify())
         .pipe(plumber.stop())
-        .pipe(gulp.dest('./public/css/'));
+        .pipe(gulp.dest('./views/css/'));
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("./src/scss/style.scss")
+    return gulp.src("./src/scss/main.scss")
         .pipe(sass({
             outputStyle: 'compressed',
         }).on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
             cascade: true
         }))
-        .pipe(gulp.dest('public/css/'))
+        .pipe(gulp.dest('views/css/'))
         .pipe(bs.stream());
 });
 
 gulp.task('js', function() {
     return gulp.src('./src/js/*.js')
-        .pipe(gulp.dest('public/js/'));
+        .pipe(gulp.dest('views/js/'));
 });
 
 
