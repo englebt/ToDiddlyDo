@@ -1,0 +1,7 @@
+/.vagrant
+/logs
+/bower_components
+/node_modules
+/api/vendor
+/.idea
+/api/composer.phar
