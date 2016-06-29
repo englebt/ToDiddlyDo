@@ -39,34 +39,41 @@ class Task {
 		echo json_encode($this->TaskModel->userTasks($uid));
 	}
 
-  //mith attempt
-  public function Task($uid) {
-    header("Content-Type: application/json");
-    echo json_encode($this->TaskModel->task($uid));
-  }
+	/*
+	 * Fetch a single task
+	 */
+	public function SingleTask($id) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->singleTask($id));
+	}
 
 	//jsw324 attempt
 	public function DeleteTask($taskID) {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->TaskModel->DeleteTask($taskID));
+		echo json_encode($this->TaskModel->deleteTask($taskID));
 	}
+
 	//jsw324 attempt
 	public function EditTask() {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->TaskModel->EditTask());
-
+		echo json_encode($this->TaskModel->editTask());
 	}
+
 	public function SaveTask() {
 
 		header("Content-Type: application/json");
-		echo json_encode($this->Taskmodel->SaveTask());
-
+		echo json_encode($this->TaskModel->saveTask());
 	}
 
-  public function CompleteTask() {
-    header("Content-Type: application/json");
-    echo json_encode($this->TaskModel->CompleteTask());
-  }
+	/*
+	 * Mark a task as complete or incomplete depending on the route used
+	 */
+	public function MarkTask($taskID, $status) {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->markTask($taskID, $status));
+	}
 }

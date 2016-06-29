@@ -44,8 +44,14 @@ $app->get('/user/:id', function ($id) use ($app, $User) {
 });
 
 //Register a user
+$app->get('/user/register', function () use ($app, $User) {
+	$User->Register();
+});
 
 //Login a user
+$app->get('/user/login', function () use ($app, $User) {
+	$User->Login();
+});
 
 //Logout a user
 
@@ -63,23 +69,30 @@ $app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
 	$Task->UserTasks($uid);
 });
 
-//Get a single task //mith
-$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
-  $Task->Task($uid);
+
+//Get a single task
+$app->get('/task/single/:id', function ($id) use ($app, $Task) {
+	$Task->SingleTask($id);
 });
 
-//Create a task //mith
-$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
-  $Task->CreateTask($uid);
-}
+//Create a task
+$app->get('/task/create', function () use ($app, $Task) {
+	$Task->SaveTask();
+});
 
-//Delete a task //mith
-$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
-  $Task->DeleteTask($uid);
-}
+//Edit a task
+$app->get('/task/edit', function () use ($app, $Task) {
+	$Task->EditTask();
+});
 
-//Mark a task as completed //mith
-$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
-  $Task->CompleteTask($uid);
-}
+//Delete a task
+$app->get('/task/delete/:id', function ($id) use ($app, $Task) {
+	$Task->DeleteTask($id);
+});
+
+//Mark a task as complete/incomplete
+$app->get('/task/mark/:id/:status', function ($id, $status) use ($app, $Task) {
+	$Task->MarkTask($id, $status);
+});
+
 
