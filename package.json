@@ -1,42 +1,26 @@
 {
-<<<<<<< HEAD
-  "name": "todiddlydo",
-=======
-<<<<<<< HEAD
-  "name": "resume-builder",
->>>>>>> 66e0c70804f45d381d566c0b9aa5a403d6e23e7f
-  "version": "1.0.0",
-  "description": "ToDiddlyDo ToDo do doing list",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "13lank_null, Captain_vee",
-  "license": "ISC",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.12.5",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.1"
-  }
-=======
-  "name": "todo-list",
-  "version": "0.0.1",
-  "description": "The best looking and functioning ToDo List on reddit!",
-  "main": "gulpfile.js",
-  "devDependencies": {
-  },
-  "scripts": {
-    "start": "gulp"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/englebt/project-1"
-  },
-  "private": true
->>>>>>> master
+    "name": "todiddlydo",
+    "version": "0.0.1",
+    "description": "ToDiddlyDo ToDo do doing list",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "gulp"
+    },
+    "author": "13lank_null, Captain_vee",
+    "license": "ISC",
+    "dependencies": {
+        "gulp": "^3.9.1"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.12.5",
+        "gulp-autoprefixer": "^3.1.0",
+        "gulp-plumber": "^1.1.0",
+        "gulp-sass": "^2.3.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/englebt/project-1"
+    },
+    "private": true
+
 }
