@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "resume-builder",
   "version": "1.0.0",
   "description": "Resume builder for Andrew Lee for his company Career Unlocked",
@@ -24,4 +25,20 @@
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.1"
   }
+=======
+  "name": "todo-list",
+  "version": "0.0.1",
+  "description": "The best looking and functioning ToDo List on reddit!",
+  "main": "gulpfile.js",
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/englebt/project-1"
+  },
+  "private": true
+>>>>>>> master
 }
