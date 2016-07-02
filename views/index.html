@@ -37,7 +37,7 @@
         </form>
     </div>
     <div class="todo">
-        <h3>To Do's:</h3>
+        <h3>To Do:</h3>
         <div class="card">
             <button><i class="fa fa-check"></i></button>
             <p class="due urgent">xx-xx</p>
@@ -51,15 +51,45 @@
             <button class="to_complete"><i class="fa fa-trash"></i></button>
         </div>
     </div>
-    <div class="signup">
-        <h1>login</h1>
+    <div class="done">
+        <h3>Completed:</h3>
+        <div class="card">
+            <button><i class="fa fa-check"></i></button>
+            <p class="due urgent">xx-xx</p>
+            <p class="title">Lorem ipsum dolor sit amet.</p>
+            <button class="to_complete"><i class="fa fa-trash"></i></button>
+        </div>
+        <div class="card low">
+            <button><i class="fa fa-check"></i></button>
+            <p class="due low">xx-xx</p>
+            <p class="title">Lorem ipsum dolor sit amet.</p>
+            <button class="to_complete"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+    <div class="login">
+        <h1>Login</h1>
         <form action="index.html" method="get">
             <div class="info">
-                <label for="username">Email:</label>
-                <input id="username" type="email" name="email" placeholder="example@gmail.com">
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" placeholder="example@gmail.com">
                 <label for="password">Password:</label>
                 <p>Forgot password?</p>
                 <input id="password" type="password" name="email">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="signup">
+        <h1>Signup</h1>
+        <form action="index.html" method="post">
+            <div class="info">
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" placeholder="example@gmail.com">
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="email">
+                <label for="confirm_password">Confirm Password:</label>
+                <input id="confirm_password" type="password" name="email">
+                <p>Already have a ToDiddlyDo? <span class="link">Login.</span></p>
                 <button type="submit">Login</button>
             </div>
         </form>
