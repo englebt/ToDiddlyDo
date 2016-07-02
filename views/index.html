@@ -13,7 +13,7 @@
     <header>
         <nav class="row">
             <div class="columns five">
-            	<img src="img/logo.svg" alt="ToDiddlyDo Logo" class="logo">
+                <img src="img/logo.svg" alt="ToDiddlyDo Logo" class="logo">
             </div>
             <h4 class="columns three">Login</h4>
             <h4 class="columns four">Register</h4>
@@ -22,25 +22,47 @@
     <div id="to_add" class="container">
         <form action="index.html" method="post">
             <input class="title" type="text" name="title" placeholder="What ToDiddlyDo, Neighbor?">
-            <label for="due_date">Due Date:</label>
-            <input id="due_date" type="date" name="due_date">
-            <label for="importance">Importance:</label>
-            <select id="importance" name="importance">
-                <option value="low" selected>Low</option>
-                <option value="important">Important</option>
-                <option value="urgent">Urgent</option>
-            </select>
-            <button type="submit"><i class="fa fa-plus"></i></button>
-            <button type="reset"><i class="fa fa-trash"></i></button>
+            <div class="info">
+                <label for="due_date">Due Date:</label>
+                <input id="due_date" type="date" name="due_date">
+                <label for="importance">Importance:</label>
+                <select id="importance" name="importance">
+                    <option value="low" selected>Low</option>
+                    <option value="important">Important</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+                <button type="submit"><i class="fa fa-plus"></i></button>
+                <button type="reset"><i class="fa fa-trash"></i></button>
+            </div>
         </form>
     </div>
     <div class="todo">
-        <div class="card urgent">
-            <button><i class="fa fa-check item"></i></button>
-            <p class="due item">xx-xx</p>
-            <p class="title item">Lorem ipsum dolor sit amet.</p>
-            <button class="to_complete item"><i class="fa fa-trash"></i></button>
+        <h3>To Do's:</h3>
+        <div class="card">
+            <button><i class="fa fa-check"></i></button>
+            <p class="due urgent">xx-xx</p>
+            <p class="title">Lorem ipsum dolor sit amet.</p>
+            <button class="to_complete"><i class="fa fa-trash"></i></button>
         </div>
+        <div class="card low">
+            <button><i class="fa fa-check"></i></button>
+            <p class="due low">xx-xx</p>
+            <p class="title">Lorem ipsum dolor sit amet.</p>
+            <button class="to_complete"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+    <div class="signup">
+        <h1>login</h1>
+        <form action="index.html" method="get">
+            <div class="info">
+                <label for="username">Email:</label>
+                <input id="username" type="email" name="email" placeholder="example@gmail.com">
+                <label for="password">Password:</label>
+                <p>Forgot password?</p>
+                <input id="password" type="password" name="email">
+                <button type="submit">Login</button>
+            </div>
+        </form>
     </div>
 </body>
 

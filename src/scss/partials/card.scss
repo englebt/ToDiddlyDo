@@ -1,5 +1,53 @@
-.card {
-	background: $white;
-	display: flex;
-	align-content: center;
+h3 {
+	text-align: left;
+	color: rgba($light-grey, 0.4);
+}
+
+.todo {
+	flex-direction: column;
+	max-width: 550px;
+	text-align: center;
+	margin: 0 auto;
+
+	.card {
+		p,
+		button {
+			margin: 0;
+		}
+
+		background: $white;
+		display: flex;
+		margin-bottom: 20px;
+
+		.fa {
+			font-size: 20px;
+		}
+
+		button {
+			border: 1px solid transparent;
+		}
+
+		.due {
+			width: 100px;
+			padding-top: 5px;
+		}
+
+		.title {
+			width: 550px;
+		}
+
+		.urgent {
+			background: $red;
+		}
+
+		.important {
+			background: $yellow;
+		}
+
+		.low {
+			background: $blue;
+		}
+
+	}
+
 }
