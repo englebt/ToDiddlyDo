@@ -17,7 +17,7 @@ class Main {
 	 */
 	public function Index (){
 
-		require_once '../api/www/index.php';
+		$this->app->render('apiViews/main.twig');
 	}
 
 }

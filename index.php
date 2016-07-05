@@ -9,6 +9,7 @@ $app = new \Slim\Slim(array(
 
 	//Output errors in Dev
 	'debug' => true,
+	'view' => new \Slim\Views\Twig()
 ));
 
 //Setup our Session middleware
@@ -24,8 +25,17 @@ $app->add(new \Slim\Middleware\SessionCookie(array(
 	'cipher_mode' => MCRYPT_MODE_CBC
 )));
 
-//Include our routes
+//TWIG
+$view = $app->view();
+$view->parserOptions = array(
+	'debug' => true,
+	//'cache' => dirname(__FILE__) . '/cache',
+);
+
+//Setup the view directory
+$view->setTemplatesDirectory('www/views/');
+
+//Include our front-end routes
 require_once('routes.php');
 
-//Initiate the Slim App Environment
 $app->run();
