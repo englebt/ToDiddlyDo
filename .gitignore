@@ -2,6 +2,5 @@
 /logs
 /bower_components
 /node_modules
-/api/vendor
+/vendor
 /.idea
-/api/composer.phar
