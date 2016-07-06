@@ -6,8 +6,7 @@
     "slim/views": "~0.1",
     "twig/twig": "1.*",
     "robmorgan/phinx": "~0.4",
-    "monolog/monolog": "~1.7",
-    "twig/twig": "1.*"
+    "monolog/monolog": "~1.7"
   },
   "config": {
     "secure-http": false
