@@ -76,6 +76,11 @@ $app->get('/api/user/login', function () use ($app, $User) {
  * These API calls are for User Tasks related data
  */
 
+//Get all tasks, regardless of user ID
+$app->get('/api/alltasks', function () use ($app, $Task) {
+  $Task->AllTasks();
+});
+
 //Get all the tasks for a user
 $app->get('/api/usertasks/:uid', function ($uid) use ($app, $Task) {
 	$Task->UserTasks($uid);
