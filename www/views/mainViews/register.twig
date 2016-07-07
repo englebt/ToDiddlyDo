@@ -1,0 +1,32 @@
+{% block register %}
+
+<div class="signup">
+  <h1>Signup</h1>
+  <form action="/api/user/register" method="post">
+    <div class="info">
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" placeholder="example@g    mail.com">
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="email">
+      <label for="confirm_password">Confirm Password:</label>
+      <input id="confirm_password" type="password" name="email">
+      <p>Already have a ToDiddlyDo? <span class="link">Login.</span></p>
+      <button type="submit">Login</button>
+    </div>
+  </form>
+  <div id="cancelSignup"><a href="#">Cancel</a></div>
+</div>
+
+<script type="text/javascript">
+  hide(document.querySelectorAll('.signup'));
+
+  document.getElementById('signupLink').addEventListener('click', function(event) {
+    show(document.querySelectorAll('.signup'));
+  });
+   
+  document.getElementById('cancelSignup').addEventListener('click', function(event)         {
+    hide(document.querySelectorAll('.signup'));
+    return false;
+  });
+</script>
+{% endblock %}
