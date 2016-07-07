@@ -34,18 +34,16 @@
 </div>
 <div class="done">
     <h3>Completed:</h3>
+    {% for task in tasks %}
+      {% if "Yes" in task.is_complete %}
     <div class="card">
         <button><i class="fa fa-check"></i></button>
-        <p class="due urgent">xx-xx</p>
-        <p class="title">Lorem ipsum dolor sit amet.</p>
+        <p class="due {{ task.importance }}">{{ task.due_date }}</p>
+        <p class="title">{{ task.name }}</p>
         <button class="to_complete"><i class="fa fa-trash"></i></button>
     </div>
-    <div class="card low">
-        <button><i class="fa fa-check"></i></button>
-        <p class="due low">xx-xx</p>
-        <p class="title">Lorem ipsum dolor sit amet.</p>
-        <button class="to_complete"><i class="fa fa-trash"></i></button>
-    </div>
+      {% endif %}
+    {% endfor %}
 </div>
 
 {% endblock %}
