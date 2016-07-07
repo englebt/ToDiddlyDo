@@ -17,8 +17,8 @@ environments:
         adapter: mysql
         host: localhost
         name: todo
-        user: englebt
-        pass: 'r4pt0r69'
+        user: listmngt
+        pass: '88_3oBA1#1^'
         port:
         charset: utf8
 
