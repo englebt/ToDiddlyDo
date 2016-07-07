@@ -30,6 +30,15 @@ class Task {
 		echo 'No direct access.';
 	}
 
+  /*
+	 * Fetch all tasks
+	 */
+	public function AllTasks() {
+
+		header("Content-Type: application/json");
+		echo json_encode($this->TaskModel->allTasks($uid));
+	}
+
 	/*
 	 * Fetch a single user's task list (all)
 	 */

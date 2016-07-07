@@ -20,6 +20,25 @@ class TaskModel {
 		$this->User = new User();
 	}
 
+  /*
+	 * Get all tasks
+	 *
+	 * This query will return all the tasks under the "tasks" table
+	 */
+	public function allTasks () {
+
+		$sql = "SELECT * FROM tasks";
+		$stmt = $this->core->dbh->prepare($sql);
+
+		if ($stmt->execute()) {
+			$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		} else {
+			$r = 0;
+		}
+
+		return $r;
+	}
+  
 	/*
 	 * Get all tasks for single user
 	 *
