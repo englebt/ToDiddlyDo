@@ -1,0 +1,49 @@
+{% extends '/layout.twig' %}
+
+{% block pageContent %}
+
+<div id="to_add" class="container">
+    <form action="index.html" method="post">
+        <input class="title" type="text" name="title" placeholder="What ToDiddlyDo, Neighbor?">
+        <div class="info">
+            <label for="due_date">Due Date:</label>
+            <input id="due_date" type="date" name="due_date">
+            <label for="importance">Importance:</label>
+            <select id="importance" name="importance">
+                <option value="low" selected>Low</option>
+                <option value="important">Important</option>
+                <option value="urgent">Urgent</option>
+            </select>
+            <button type="submit"><i class="fa fa-plus"></i></button>
+            <button type="reset"><i class="fa fa-trash"></i></button>
+        </div>
+    </form>
+</div>
+<div class="todo">
+    <h3>To Do:</h3>
+    {% for task in tasks %}
+      {% if "No" in task.is_complete %}
+    <div class="card">
+        <button><i class="fa fa-check"></i></button>
+        <p class="due {{ task.importance }}">{{ task.due_date }}</p>
+        <p class="title">{{ task.name }}</p>
+        <button class="to_complete"><i class="fa fa-trash"></i></button>
+    </div>
+      {% endif %}
+    {% endfor %}
+</div>
+<div class="done">
+    <h3>Completed:</h3>
+    {% for task in tasks %}
+      {% if "Yes" in task.is_complete %}
+    <div class="card">
+        <button><i class="fa fa-check"></i></button>
+        <p class="due {{ task.importance }}">{{ task.due_date }}</p>
+        <p class="title">{{ task.name }}</p>
+        <button class="to_complete"><i class="fa fa-trash"></i></button>
+    </div>
+      {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

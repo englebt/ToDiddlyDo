@@ -9,15 +9,15 @@ class Main {
 	public function __construct() {
 		global $app;
 		$this->app = $app;
+    
 	}
 
 	/*
 	 * If you request  local.todolist.com:8008/api
 	 * this is what shows up
 	 */
-	public function Index (){
-
-		require_once '../api/www/index.php';
+	public function Index (){    
+		$this->app->render('apiViews/main.twig');
 	}
 
 }

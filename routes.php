@@ -1,5 +1,17 @@
 <?php
 
+/**************** FRONT END ROUTES *********************/
+
+$Front = new \ToDo\Controllers\Front();
+
+//Load the home page
+$app->get('/', function () use ($app, $Front) {
+	$Front->Index();
+});
+
+
+/**************** API CALL ROUTES *********************/
+
 //Load up our classes that we'll use in the routes
 $Main = new \ToDo\Controllers\Main();
 $User = new \ToDo\Controllers\User();
@@ -23,7 +35,7 @@ $Task = new \ToDo\Controllers\Task();
  */
 
 //The main index of the API - used for documentation and examples of API requests
-$app->get('/', function () use ($app, $Main) {
+$app->get('/api', function () use ($app, $Main) {
 	$Main->Index();
 });
 
@@ -34,22 +46,22 @@ $app->get('/', function () use ($app, $Main) {
  */
 
 //Get all of the users
-$app->get('/users/all', function () use ($app, $User) {
+$app->get('/api/users/all', function () use ($app, $User) {
 	$User->AllUsers();
 });
 
 //Get a single user
-$app->get('/user/:id', function ($id) use ($app, $User) {
+$app->get('/api/user/:id', function ($id) use ($app, $User) {
 	$User->SingleUser($id);
 });
 
 //Register a user
-$app->get('/user/register', function () use ($app, $User) {
+$app->get('/api/user/register', function () use ($app, $User) {
 	$User->Register();
 });
 
 //Login a user
-$app->get('/user/login', function () use ($app, $User) {
+$app->get('/api/user/login', function () use ($app, $User) {
 	$User->Login();
 });
 
@@ -64,35 +76,45 @@ $app->get('/user/login', function () use ($app, $User) {
  * These API calls are for User Tasks related data
  */
 
+//Get all tasks, regardless of user ID
+$app->get('/api/alltasks', function () use ($app, $Task) {
+  $Task->AllTasks();
+});
+
 //Get all the tasks for a user
-$app->get('/usertasks/:uid', function ($uid) use ($app, $Task) {
+$app->get('/api/usertasks/:uid', function ($uid) use ($app, $Task) {
 	$Task->UserTasks($uid);
 });
 
+$app->get('/api/alltasks/', function ($uid) use ($app, $Task) {
+	$Task->AllTasks();
+});
 
 //Get a single task
-$app->get('/task/single/:id', function ($id) use ($app, $Task) {
+$app->get('/api/task/single/:id', function ($id) use ($app, $Task) {
 	$Task->SingleTask($id);
 });
 
 //Create a task
-$app->get('/task/create', function () use ($app, $Task) {
+$app->get('/api/task/create', function () use ($app, $Task) {
 	$Task->SaveTask();
 });
 
 //Edit a task
-$app->get('/task/edit', function () use ($app, $Task) {
+$app->get('/api/task/edit', function () use ($app, $Task) {
 	$Task->EditTask();
 });
 
 //Delete a task
-$app->get('/task/delete/:id', function ($id) use ($app, $Task) {
+$app->get('/api/task/delete/:id', function ($id) use ($app, $Task) {
 	$Task->DeleteTask($id);
 });
 
 //Mark a task as complete/incomplete
-$app->get('/task/mark/:id/:status', function ($id, $status) use ($app, $Task) {
+$app->get('/api/task/mark/:id/:status', function ($id, $status) use ($app, $Task) {
 	$Task->MarkTask($id, $status);
 });
+
+
 
 
