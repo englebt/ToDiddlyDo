@@ -16,7 +16,7 @@ var BROWSER_SYNC_RELOAD_DELAY = 500;
 gulp.task('serve', ['sass'], function() {
 
     bs.init({
-        server: "./views",
+        server: "./www/views",
         baseDir: "app",
         port: 8080,
         online: true,
@@ -25,9 +25,9 @@ gulp.task('serve', ['sass'], function() {
         // tunnel: "my-private-site"
     });
 
-    gulp.watch("./src/scss/**/*.scss", ['sass']);
-    gulp.watch("./src/js/**/*.js", ['js']).on('change', bs.reload);
-    gulp.watch(["./views/*.html", "./views/partials/*.html"]).on('change', bs.reload);
+    gulp.watch("./www/src/scss/**/*.scss", ['sass']);
+    gulp.watch("./www/src/js/**/*.js", ['js']).on('change', bs.reload);
+    gulp.watch(["./www/views/*.twig", "./www/views/partials/*.twig"]).on('change', bs.reload);
 });
 
 gulp.task('nodemon', function(cb) {
@@ -56,30 +56,30 @@ gulp.task('nodemon', function(cb) {
 });
 
 gulp.task('plumber', ['sass'], function() {
-    gulp.src('./src/*.scss')
+    gulp.src('./www/src/*.scss')
         .pipe(plumber())
         .pipe(sass())
         // .pipe(uglify())
         .pipe(plumber.stop())
-        .pipe(gulp.dest('./views/css/'));
+        .pipe(gulp.dest('./www/views/css/'));
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("./src/scss/main.scss")
+    return gulp.src("./www/src/scss/main.scss")
         .pipe(sass({
             outputStyle: 'compressed',
         }).on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
             cascade: true
         }))
-        .pipe(gulp.dest('views/css/'))
+        .pipe(gulp.dest('./www/views/css/'))
         .pipe(bs.stream());
 });
 
 gulp.task('js', function() {
-    return gulp.src('./src/js/*.js')
-        .pipe(gulp.dest('views/js/'));
+    return gulp.src('./www/src/js/*.js')
+        .pipe(gulp.dest('./www/views/js/'));
 });
 
 

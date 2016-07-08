@@ -1,0 +1,21 @@
+{% block register %}
+<div class="overlayRegister">
+<i id="cancelLogin" class="close fa fa-times"><a href="#"></a></i>
+  <div id="register">
+    <h1>Register</h1>
+        <form action="/api/user/register" method="post">
+            <div class="info">
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" placeholder="example@gmail.com">
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password" placeholder="**********">
+                <label for="confirm_password">Confirm Password:</label>
+                <input id="confirm_password" type="password" name="confirm_password" placeholder="**********">
+                <p>Already have a ToDiddlyDo? <span class="link">Login.</span></p>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

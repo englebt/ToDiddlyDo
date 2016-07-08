@@ -36,6 +36,8 @@ class Front {
 
 		//Pulls the view from www/views/main/
 		$this->app->render('mainViews/main.twig', $data);
+    $this->app->render('mainViews/login.twig');
+    $this->app->render('mainViews/register.twig');
 	}
 
 }

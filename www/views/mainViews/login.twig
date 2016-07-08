@@ -1,0 +1,19 @@
+{% block login %}
+    <div class="overlayLogin">
+      <i id="cancelLogin" class="close fa fa-times"><a href="#"></a></i>
+        <div id="login">
+            <h1>Login</h1>
+            <form action="/api/user/login" method="post">
+                <div class="info">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" placeholder="example@gmail.com">
+                    <label for="password">Password:</label>
+                    <p>Forgot password?</p>
+                    <input id="password" type="password" name="password" placeholder="**********">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+      </div>
+
+{%endblock %}
