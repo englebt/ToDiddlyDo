@@ -54,7 +54,7 @@
             {% if "No" in task.is_complete %}
         <div class="card">
             <button><i class="fa fa-check"></i></button>
-            <p class="due {{ task.importance }}">{{ task.due_date }}</p>
+            <p class="due {{ task.importance }}">{{ task.due_date|date("m/d") }}</p>
             <p class="title">{{ task.name }}</p>
             <button class="to_complete"><i class="fa fa-trash"></i></button>
         </div>
@@ -68,7 +68,7 @@
             {% if "No" in task.is_complete %}
         <div class="card">
             <button><i class="fa fa-check"></i></button>
-            <p class="due-done">{{ task.due_date }}</p>
+            <p class="due-done">{{ task.due_date|date("m/d") }}</p>
             <p class="title">{{ task.name }}</p>
             <button class="to_complete"><i class="fa fa-trash"></i></button>
         </div>
