@@ -3,7 +3,7 @@ h3 {
 	color: rgba($light-grey, 0.4);
 }
 
-.todo {
+.card-container {
 	flex-direction: column;
 	max-width: 550px;
 	text-align: center;
@@ -13,6 +13,7 @@ h3 {
 		p,
 		button {
 			margin: 0;
+			align-content: center;
 		}
 
 		background: $white;
@@ -48,6 +49,22 @@ h3 {
 			background: $blue;
 		}
 
+	}
+
+}
+
+.done {
+	opacity: 0.6;
+
+	.due-done {
+		width: 100px;
+		padding-top: 5px;
+		background: $due-done;
+	}
+
+	.title {
+		color: rgba($done - 60, 1);
+		text-decoration: line-through;
 	}
 
 }

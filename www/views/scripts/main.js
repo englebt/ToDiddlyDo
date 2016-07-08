@@ -1,13 +1,14 @@
-function hide (elements) {
-    elements = elements.length ? elements : [elements];
-    for (var index = 0; index < elements.length; index++) {
-        elements[index].style.display = 'none';
-    }
-}
+jQuery(function($) {
+    $(".close").on('click', function() {
+        $('.overlayLogin, .overlayRegister').css('display', 'none');
+    });
 
-function show (elements, displayType) {
-    elements = elements.length ? elements : [elements];
-    for (var index = 0; index < elements. length; index++) {
-        elements[index].style.display = displayType || 'block';
-    }
-}
+    $("#loginLink").on('click', function() {
+        $('.overlayLogin').css('display', 'block');
+    });
+
+    $("#registerLink").on('click', function() {
+        $('.overlayRegister').css('display', 'block');
+    });
+
+});
