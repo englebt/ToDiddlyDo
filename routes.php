@@ -86,10 +86,6 @@ $app->get('/api/usertasks/:uid', function ($uid) use ($app, $Task) {
 	$Task->UserTasks($uid);
 });
 
-$app->get('/api/alltasks/', function ($uid) use ($app, $Task) {
-	$Task->AllTasks();
-});
-
 //Get a single task
 $app->get('/api/task/single/:id', function ($id) use ($app, $Task) {
 	$Task->SingleTask($id);
